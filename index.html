@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Routine Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Daily Checklist</h1>
+            <p class="date" id="currentDate"></p>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-section">
+            <div class="progress-info">
+                <span>Progress: <strong id="completedCount">0</strong>/<strong id="totalCount">0</strong></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="morning">Morning</button>
+            <button class="tab-btn" data-tab="afternoon">Afternoon</button>
+            <button class="tab-btn" data-tab="evening">Evening</button>
+        </div>
+
+        <!-- Tasks Sections -->
+        <main class="tasks-container">
+            <!-- Morning Tasks -->
+            <section class="tab-content active" id="morning">
+                <div class="section-title">Morning Routine</div>
+                <div class="tasks-list" id="morningTasks"></div>
+                <div class="add-task">
+                    <input type="text" id="morningInput" placeholder="Add a morning task...">
+                    <button onclick="addTask('morning')">+</button>
+                </div>
+            </section>
+
+            <!-- Afternoon Tasks -->
+            <section class="tab-content" id="afternoon">
+                <div class="section-title">Afternoon Tasks</div>
+                <div class="tasks-list" id="afternoonTasks"></div>
+                <div class="add-task">
+                    <input type="text" id="afternoonInput" placeholder="Add an afternoon task...">
+                    <button onclick="addTask('afternoon')">+</button>
+                </div>
+            </section>
+
+            <!-- Evening Tasks -->
+            <section class="tab-content" id="evening">
+                <div class="section-title">Evening Routine</div>
+                <div class="tasks-list" id="eveningTasks"></div>
+                <div class="add-task">
+                    <input type="text" id="eveningInput" placeholder="Add an evening task...">
+                    <button onclick="addTask('evening')">+</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Action Buttons -->
+        <footer class="footer">
+            <button class="btn btn-secondary" onclick="resetDay()">Reset Day</button>
+            <button class="btn btn-primary" onclick="clearAll()">Clear All</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
